@@ -8,8 +8,8 @@
 <body>
     <h1>Random Color Generator</h1>
     <div>
-        <button>Background-Color</button>
-        <button>Text-Color</button>
+        <button id="#bg-btn" onclick="changeBgColor()">Background-Color</button>
+        <button id="txt-btn" onclick="changeTxtColor()">Text-Color</button>
     </div>
     <div>
         <h2>Sample Text: </h2>
@@ -19,6 +19,18 @@
         </div>
     </div>
     <script>
+        let bgBtn = document.getElementById("bg-btn");
+        let txtBtn = document.getElementById("txt-btn");
+
+        function changeBgColor() {
+            const randomBgColor = Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = "#" + randomBgColor; 
+        }
+
+        function changeTxtColor() {
+            const randomTxtColor = Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.color = "#" + randomTxtColor; 
+        }
 
     </script>
 </body>
